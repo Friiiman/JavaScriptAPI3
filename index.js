@@ -1,3 +1,5 @@
+// Работал вместе с Сергей Курнаков
+
 let perPage = 20;
 let page = Math.floor(Math.random() * 7) + 1;
 let currentImageIndex = Math.floor(Math.random() * perPage);
