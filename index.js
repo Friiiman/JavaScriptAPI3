@@ -109,7 +109,6 @@ function saveToHistory(currentImage) {
     if (getCurrentData.length === 0) {
         getData.push(...currentData);
         localStorage.setItem(localStorageKey, JSON.stringify(getData));
-        // getCurrentData = getData.filter((element) => element.id === currentImage.id);
     }
 
     const historyElHtml = getData.map((element) => getHistoryHtml(element)).join("");
