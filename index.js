@@ -20,7 +20,6 @@ fetch(`https://api.unsplash.com/photos?page=${page}&per_page=${perPage}&client_i
         const localStorageKey = "likesCount";
         const currentImage = data[currentImageIndex];
 
-        processData(currentImage);
         addImageEl(currentImage);
         likeBtn(localStorageKey, currentImage);
         likeBtnRise(localStorageKey);
@@ -31,10 +30,6 @@ fetch(`https://api.unsplash.com/photos?page=${page}&per_page=${perPage}&client_i
     });
 
 // ----------------------------------------------------------------------------
-
-function processData(data) {
-    console.log(data);
-}
 
 function addImageEl(currentImage) {
     pageMainEl.insertAdjacentHTML('beforeend',
@@ -105,7 +100,6 @@ function saveToHistory(currentImage) {
 
     const getData = JSON.parse(localStorage.getItem(localStorageKey));
     let getCurrentData = getData.filter((element) => element.id === currentImage.id);
-    console.log(getCurrentData);
     if (getCurrentData.length === 0) {
         getData.push(...currentData);
         localStorage.setItem(localStorageKey, JSON.stringify(getData));
